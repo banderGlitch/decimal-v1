@@ -1,14 +1,19 @@
 .decimalLogoClass {
-    width: 10%;
-    height: 2px;
-
+  width: 10%;
+  height: 2px;
 }
 .headerStyle {
-    height: 73px;
-    background-color: #1b2338;
-
+  height: 73px;
+  position: fixed;
+  z-index: 100;
+  background: inherit;
+  backdrop-filter: blur(4px);
 }
 .NavbarBtnClass {
-    border-radius: 11px;
-    background-color: #0e76fd;
+  border-radius: 11px;
+  background-color: #0e76fd;
+}
+
+.css-hip9hq-MuiPaper-root-MuiAppBar-root {
+  background-color: transparent !important;
 }

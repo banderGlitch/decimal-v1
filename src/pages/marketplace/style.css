@@ -1,10 +1,17 @@
 .Marketplacestyle {
-    padding: 1px;
-    background-color: #25304c;
-    min-height: 100vh; /* Ensure the container covers the entire viewport height */
-    gap: 27px;
-    padding-top: 52px;
-    padding-left: 27px;
-    padding-right: 76px;
-    display: flex;
+  padding: 1px;
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(37, 9, 121, 1) 35%,
+    rgb(29, 2, 68) 100%
+  );
+
+  min-height: 100vh; /* Ensure the container covers the entire viewport height */
+  gap: 27px;
+  padding-top: 52px;
+  padding-left: 27px;
+  padding-right: 76px;
+  display: flex;
 }

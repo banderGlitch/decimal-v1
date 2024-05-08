@@ -1,58 +1,84 @@
-import * as React from 'react';
-import Box from '@mui/material/Box';
-import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
-import CardContent from '@mui/material/CardContent';
-import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
-import './styles.css';
-import FunctionsIcon from '@mui/icons-material/Functions';
-import AttachMoneyTwoToneIcon from '@mui/icons-material/AttachMoneyTwoTone';
-import HourglassBottomTwoTone from '@mui/icons-material/HourglassBottomTwoTone';
+import * as React from "react";
+import Box from "@mui/material/Box";
+import Card from "@mui/material/Card";
+import CardActions from "@mui/material/CardActions";
+import CardContent from "@mui/material/CardContent";
+import Button from "@mui/material/Button";
+import Typography from "@mui/material/Typography";
+import "./styles.css";
+import FunctionsIcon from "@mui/icons-material/Functions";
+import AttachMoneyTwoToneIcon from "@mui/icons-material/AttachMoneyTwoTone";
+import HourglassBottomTwoTone from "@mui/icons-material/HourglassBottomTwoTone";
 
+const card = (appName, description, AppIcon, Apps, handleNavigate) => {
+  return (
+    <div className="AppCard">
+      <React.Fragment>
+        <CardContent
+          style={{
+            height: "150px",
+            display: "flex",
+            justifyContent: "center",
+            gap: "12px",
+            alignItems: "center",
+            flexDirection: "column",
+          }}
+        >
+          <AppIcon style={{ alignItems: "center", color: "#fff" }} />
+          <Typography
+            sx={{ fontSize: 16, fontWeight: "bold", mt: 2 }}
+            color="#fff"
+            gutterBottom
+          >
+            {appName}
+          </Typography>
+          <Typography
+            sx={{ fontSize: 16, fontWeight: "bold", mb: 1.5 }}
+            color="#fff"
+          >
+            {description}
+          </Typography>
+        </CardContent>
+        <CardActions
+          style={{
+            display: "flex",
+            justifyContent: "center",
+          }}
+        >
+          {Apps === "Comming Soon" ? (
+            <Button size="small">NA</Button>
+          ) : (
+            <Button onClick={() => handleNavigate(appName)}>{Apps}App</Button>
+          )}
+        </CardActions>
+      </React.Fragment>
+    </div>
+  );
+};
 
-
-const card = (appName, description, AppIcon, Apps , handleNavigate) => {
-    return (
-        <div className='AppCard'>
-            <React.Fragment>
-                <CardContent style={{ height: '150px', display: 'flex', justifyContent: 'center', gap: '12px', alignItems: 'center', flexDirection: 'column' }}>
-                    <AppIcon style={{ alignItems: 'center' }} />
-                    <Typography sx={{ fontSize: 16, fontWeight: 'bold', mt: 2 }} color="text.secondary" gutterBottom>
-                        {appName}
-                    </Typography>
-                    <Typography sx={{ fontSize: 16, fontWeight: 'bold', mb: 1.5 }} color="text.secondary">
-                        {description}
-                    </Typography>
-                </CardContent>
-                <CardActions style={{ display: 'flex', justifyContent: 'center', backgroundColor: '#1b2338' }}>
-                    {Apps === "Comming Soon" ? <Button size='small'>NA</Button> : <Button onClick={() => handleNavigate(appName)}>{Apps}App</Button>}
-                </CardActions>
-            </React.Fragment>
-        </div>
-
-
-    )
-}
-
-
-
-export default function AppCard({ 
-    appName, 
-    description, 
-    AppIcon, 
-    Apps,
-    handleNavigate = () => {}
+export default function AppCard({
+  appName,
+  description,
+  AppIcon,
+  Apps,
+  handleNavigate = () => {},
 }) {
-    return (
-        <div style={{ width: "229px" }}>
-            <Box sx={{ minWidth: 275 }}>
-                <Card variant="outlined">{card(appName, description, AppIcon, Apps ,  handleNavigate)}</Card>
-            </Box>
-
-        </div>
-
-    );
+  return (
+    <Box>
+      <Card
+        sx={{
+          borderRadius: 4,
+          background: "rgba(255, 255, 255, 0.1)",
+          borderRadius: "16px",
+          boxShadow: "0 4px 30px rgba(0, 0, 0, 0.1)",
+          backdropFilter: "blur(5px)",
+          border: "2px solid rgba(255, 255, 255, 0.1)",
+        }}
+      >
+        {card(appName, description, AppIcon, Apps, handleNavigate)}
+      </Card>
+    </Box>
+  );
 }
 
 // import * as React from 'react';
