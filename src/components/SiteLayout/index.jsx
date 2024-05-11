@@ -1,12 +1,13 @@
 import React from "react";
-import Header from "../layout/Header/Header";
+
 import Footer from "../layout/Footer/Footer";
+import Header from "../layout/Header/Header";
 
 const SiteLayout = ({ children }) => {
     return (
         <div>
             <Header />
-            <main>{children}</main>
+            <main style={{marginTop: "76px"}} className="">{children}</main>
             <Footer />
         </div>
     );

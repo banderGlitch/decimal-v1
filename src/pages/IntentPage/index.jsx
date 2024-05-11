@@ -425,7 +425,7 @@ export default function StepForm() {
         display={"flex"}
         justifyContent={""}
         spacing={10}
-      // gap={2}
+        // gap={2}
       >
         <Grid
           item
@@ -434,7 +434,6 @@ export default function StepForm() {
           display={"flex"}
           alignItems={"self-start"}
           justifyContent={"center"}
-          sx={{ pt: "1000px", backgroundColor: "grey" }}
         >
           <Stepper
             he
@@ -451,7 +450,7 @@ export default function StepForm() {
                     color="inherit"
                     onClick={() => setActiveStep(index)}
                   >
-                    <StepLabel {...labelProps}>{step}</StepLabel>
+                    <StepLabel {...labelProps}><Typography color={activeStep === index ? '#fff' : "red"}>{step}</Typography></StepLabel>
                   </StepButton>
                 </Step>
               );
@@ -485,19 +484,17 @@ export default function StepForm() {
               </Button>
             )}
 
-            {activeStep !== steps.length - 1 && 
-             <Button
-             variant="contained"
-             color="primary"
-             onClick={handleNext}
-           // type="submit"
-           >
-             {activeStep === steps.length - 1 ? "Finish" : "Next"}
-           </Button>
-             }
-             {}
-
-           
+            {activeStep !== steps.length - 1 && (
+              <Button
+                variant="contained"
+                color="primary"
+                onClick={handleNext}
+                // type="submit"
+              >
+                {activeStep === steps.length - 1 ? "Finish" : "Next"}
+              </Button>
+            )}
+            {}
           </Grid>
         </Grid>
       </Grid>
